@@ -7,10 +7,9 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 import os
 import streamlit as st
-from dotenv import load_dotenv
+# In Docker we pass env vars via docker-compose env_file
+# Locally, .env can be loaded by python-dotenv if you want, but not required.
 
-# Load environment variables
-load_dotenv(dotenv_path=PROJECT_ROOT / ".env")
 
 from services.parser import parse_reviews_file
 from services.llm_client import analyze_reviews_with_llm
